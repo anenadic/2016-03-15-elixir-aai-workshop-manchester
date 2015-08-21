@@ -6,59 +6,42 @@
   Use 'page.html' for other pages.
 -->
 <html>
-  <head>
-    <title>Software Carpentry: {{ page.venue }}</title>
-    {% include header.html %}
-    <meta name="venue" content="{{page.venue}}" />
-    <meta name="date" content="{{page.humandate}}" />
-    <meta name="startdate" content="{{page.startdate}}" />
-    <meta name="enddate" content="{{page.enddate}}" />
-    {% if page.redirect %}
-    <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
-    {% endif %}
-  </head>
-  <body class="workshop">
+<head>
+  <title>{{ page.title }}: {{ page.venue }}</title>
+  {% include header.html %}
+  <meta name="venue" content="{{page.venue}}" />
+  <meta name="date" content="{{page.humandate}}" />
+  <meta name="startdate" content="{{page.startdate}}" />
+  <meta name="enddate" content="{{page.enddate}}" />
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
+  {% endif %}
+</head>
+<body class="workshop">
 
-    {% include github-ribbon.html %}
+<!--    {% include github-ribbon.html %}-->
 
-    <div class="container card">
-      {% include banner.html %}
-      <div class="jumbotron">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h2>{{page.venue}}</h2>
-            <div class="row">
-              <div class="col-md-6">
-                <p>{{page.humandate}}</p>
-                <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
-              </div>
-              <div class="col-md-6">
-                <p>
-                <strong>Instructors:</strong>
-                {% if page.instructor %}
-                {{page.instructor | join: ', ' %}}
-                {% else %}
-                to be announced.
-                {% endif %}
-                </p>
-                {% if page.helper %}
-                <p>
-                <strong>Helpers:</strong>
-                {{page.helper | join: ', ' %}}
-                </p>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="container card">
+  {% include banner.html %}
+  <br>
+  <div class="jumbotron" style="padding: 20px; margin: 0px;">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>
+          {{page.title}}
+        </h2>
+        <h3>{{page.humandate}}{% if page.humantime %}, {{page.humantime}}{% endif %}</h3>
+        <h3>{{page.address}}</h3>
       </div>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          {{content}}
-        </div>
-      </div>
-      {% include footer.html %}
     </div>
-    {% include javascript.html %}
-  </body>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      {{content}}
+    </div>
+  </div>
+  <!--      {% include footer.html %}-->
+</div>
+{% include javascript.html %}
+</body>
 </html>
