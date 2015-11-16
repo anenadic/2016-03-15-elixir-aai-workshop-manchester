@@ -76,7 +76,7 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
   INSTRUCTORS
 -->
 <p>
-    <strong>Instructors:</strong>
+    <strong>Trainers:</strong>
     {% if page.instructor %}
     {{page.instructor | join: ', ' %}}
     {% else %}
@@ -84,17 +84,7 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
     {% endif %}
 </p>
 
-<!--
-  HELPERS
--->
-<p>
-    <strong>Helpers:</strong>
-    {% if page.helper %}
-    {{page.helper | join: ', ' %}}
-    {% else %}
-    To be announced
-    {% endif %}
-</p>
+
 
 <!--
   REQUIREMENTS
