@@ -3,16 +3,15 @@ layout: workshop
 root: .
 title: Software and Data Carpentry's "Instructor Training" Workshop
 venue: University of Manchester
-address: Atlas Rooms 1&2, Kilburn Building, School of Computer Science, University of Manchester, Oxford Road, Manchester M13 9PL
+address: Atlas Rooms 1 and 2, Kilburn Building, School of Computer Science, University of Manchester, Oxford Road, Manchester M13 9PL
 latlng: 53.467674, -2.233924
 humandate: 23-24 November 2015
 humantime: 09:00-16:00
 startdate: 2015-11-23
 enddate: 2015-11-24
-instructor: ["Greg Wilson", "Aleksandra Pawlik"]
-helper: ["TBC"]
+instructor: ["Greg Wilson", "Karin Lagesen", "Aleksandra Pawlik"]
 contact: "a.nenadic@manchester.ac.uk"
-etherpad: https://etherpad.mozilla.org/zcanCjWFip
+etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Training
 ---
 
 
@@ -77,7 +76,7 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
   INSTRUCTORS
 -->
 <p>
-    <strong>Instructors:</strong>
+    <strong>Trainers:</strong>
     {% if page.instructor %}
     {{page.instructor | join: ', ' %}}
     {% else %}
@@ -85,17 +84,7 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
     {% endif %}
 </p>
 
-<!--
-  HELPERS
--->
-<p>
-    <strong>Helpers:</strong>
-    {% if page.helper %}
-    {{page.helper | join: ', ' %}}
-    {% else %}
-    To be announced
-    {% endif %}
-</p>
+
 
 <!--
   REQUIREMENTS
@@ -165,23 +154,36 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
         <table class="table table-striped">
             <tr>
                 <td>09:00</td>
-                <td>Welcome and overview; three stages of cognitive development; teaching performance</td>
+                <td>Welcome and introductions</td>
             </tr>
+            <tr>
+                <td>9:30</td>
+                <td>Overview: key concepts and training goals</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td>Formative vs. summative assessment</td>
+            </tr>
+            
             <tr>
                 <td>10:30</td>
                 <td>Coffee break</td>
             </tr>
             <tr>
                 <td>11:00</td>
-                <td>Three stages of cognitive development; teaching performance - continued</td>
+                <td>Teaching as performance art</td>
             </tr>
             <tr>
                 <td>12:00</td>
                 <td>Lunch break</td>
             </tr>
-            <tr>
+             <tr>
                 <td>13:00</td>
-                <td>Formative vs. summative assessment; teach performance</td>
+                <td>Discussion on the exercise on teaching as performance art</td>
+            </tr>
+            <tr>
+                <td>14:00</td>
+                <td>Concept maps</td>
             </tr>
             <tr>
                 <td>14:30</td>
@@ -189,11 +191,19 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
             </tr>
             <tr>
                 <td>15:00</td>
-                <td>Formative vs. summative assessment; teach performance - continued</td>
+                <td> Concept maps - continued</td>
+            </tr>
+             <tr>
+                <td>16:00</td>
+                <td>Motivation and demotivation. Diversity. Indifference.</td>
             </tr>
             <tr>
-                <td>16:00</td>
+                <td>16:45</td>
                 <td>Wrap-up</td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>Close</td>
             </tr>
         </table>
     </div>
@@ -202,23 +212,31 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
         <table class="table table-striped">
             <tr>
                 <td>09:00</td>
-                <td>Recap; motivation and demotivation; teaching performance<br></td>
+                <td>Recap and homework review<br></td>
+            </tr>
+            <tr>
+                <td>09:30</td>
+                <td>Alternative formative assessment techniques</td>
             </tr>
             <tr>
                 <td>10:30</td>
                 <td>Coffee break</td>
             </tr>
-            <tr>
+             <tr>
                 <td>11:00</td>
-                <td>Recap; motivation and demotivation; teaching performance - continued</td>
-            </tr>
+                <td>Live coding and active learning</td>
+            </tr
             <tr>
                 <td>12:00</td>
                 <td>Lunch break</td>
             </tr>
             <tr>
                 <td>13:00</td>
-                <td>Overview of existing materials; how to contribute; next steps</td>
+                <td>Overview of Software and Data Carpentry infrastructure</td>
+            </tr>
+             <tr>
+                <td>13:30</td>
+                <td>Setting up and running a workshop</td>
             </tr>
             <tr>
                 <td>14:30</td>
@@ -226,11 +244,19 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
             </tr>
             <tr>
                 <td>15:00</td>
-                <td>Overview of existing materials; how to contribute; next steps - continued</td>
+                <td>Overview of existing materials; how to contribute</td>
             </tr>
             <tr>
                 <td>16:00</td>
+                <td>Next setps</td>
+            </tr>
+            <tr>
+                <td>16:45</td>
                 <td>Wrap-up</td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>Close</td>
             </tr>
         </table>
     </div>
@@ -254,9 +280,9 @@ etherpad: https://etherpad.mozilla.org/zcanCjWFip
         findings
         it reports.
 
-    <li>Finally, please go to <a target="_blank" href=" http://software-carpentry.org/lessons.html">Software Carpentry's
-        lessons page</a> and browse the lessons to see what
-        is currently taught in Software Carpentry.
+    <li>Finally, please go to <a target="_blank" href=" http://software-carpentry.org/lessons.html">Software Carpentry's</a> and <a href="http://www.datacarpentry.org/lessons/">Data Carpentry's</a>
+        lessons pages and browse the lessons to see what
+        is currently taught in Software and Data Carpentry.
 
     <li>If you are interested in doing more reading, <a target="_blank"
                                                         href="http://www.amazon.com/Teaching-What-You-Dont-Know/dp/0674066170">Huston's
