@@ -1,40 +1,30 @@
 ---
 layout: workshop
 root: .
-title: Software and Data Carpentry's "Instructor Training" Workshop
+title: ELIXIR AAI Workshop
 venue: University of Manchester
-address: Atlas Rooms 1 and 2, Kilburn Building, School of Computer Science, University of Manchester, Oxford Road, Manchester M13 9PL
+address: Atlas Rooms 1 & 2, Kilburn Building, School of Computer Science, University of Manchester, Oxford Road, Manchester M13 9PL
 latlng: 53.467674, -2.233924
-humandate: 23-24 November 2015
+humandate: XX-YY March 2016
 humantime: 09:00-17:00
-startdate: 2015-11-23
-enddate: 2015-11-24
-instructor: ["Greg Wilson", "Karin Lagesen", "Aleksandra Pawlik"]
-contact: "a.nenadic@manchester.ac.uk"
-etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Training
+startdate: 2016-03-XX
+enddate: 2016-03-YY
+instructor: []
+contact: ["a.nenadic@manchester.ac.uk", "ari-matti.saren@csc.fi"]
+etherpad:
 ---
 
-
-
-<h2>Workshop information</h2>
+<h2>Workshop Information</h2>
 
 <p>
-    This workshop covers the basics of educational psychology and instructional design,
-    and looks at how to use these ideas in both intensive workshops and regular classes.
+    This workshop covers the basics of Authentication and Authorisation Infrastructure (AAI), getting started with Shibboleth and setting up Identity Providers (IdPs) and Service Providers (SPs).
 </p>
 <p>
-    The workshop is a mix of lectures and hand-on lessons where you practice giving a
-    short lesson using approaches learned.
+    The workshop is a mix of lectures and hands-on lessons where participants will have an apportunity to play around with installing and setting up code.
 </p>
 <p>
-    This is training for teaching, not technical training; you do not need any particular technical background,
-    and we will not be teaching that.
+    Training materials are based on SWITCH AAI Shibboleth Training - see the <a href="#prepararation">Preparation</a> section below.
 </p>
-
-<h4 class="jumbotron" style="padding: 10px; margin: 0px 0px 10px 0px;">
-    Register for the workshop
-    <a target="_blank" href="http://www.eventbrite.com/e/elixir-uk-software-data-carpentry-instructor-training-23-24-november-2015-registration-18186942635">via EventBrite</a>.
-</h4>
 
 <p>
     <strong>Date and time:</strong>
@@ -73,32 +63,16 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
 </p>
 
 <!--
-  INSTRUCTORS
--->
-<p>
-    <strong>Trainers:</strong>
-    {% if page.instructor %}
-    {{page.instructor | join: ', ' %}}
-    {% else %}
-    To be announced
-    {% endif %}
-</p>
-
-
-
-<!--
   REQUIREMENTS
 
   Specify the requirements for the workshop, e.g. software that needs to be pre-installed, etc.
 -->
 <p>
-    <strong>Requirements:</strong> Participants should bring a laptop that is Internet connected and has a functioning browser.
-    If you have it, a specialized device for recording audio and video (mobile phones and laptops are OK) - throughout the two days,
-    we are going to record one another teaching in pairs or threes. It does not have to be high-quality,
-    but it should be good enough that you can understand what someone is saying.
+    <strong>Requirements:</strong> Participants should bring a laptop - if you do not have one, please let the organisers know in advance. You may also be paired with someone else.
+</p>
 
-<p><em>Also, make sure you read the
-    <a href="#preparation">Preparation</a> section below.</em></p>
+<p>
+    Also, have a look at the documentation from the <a href="#prepararation">Preparation</a> section below.
 </p>
 
 <!--
@@ -113,13 +87,13 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
   where 'YYYY-MM-DD-site' is the identifier for your workshop (e.g.,
   '2015-06-10-esu'.
 -->
-{% if page.etherpad %}
-<p>
-    <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
-    <br/>
-    We will use this Etherpad for chatting, taking and sharing notes, URLs and other useful bits.
-</p>
-{% endif %}
+<!--{% if page.etherpad %}-->
+<!--<p>-->
+    <!--<strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.-->
+    <!--<br/>-->
+    <!--We will use this Etherpad for chatting, taking and sharing notes, URLs and other useful bits.-->
+<!--</p>-->
+<!--{% endif %}-->
 
 <!--
   CONTACT EMAIL ADDRESS
@@ -132,17 +106,29 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
     <strong>Contact</strong>:
     Please email
     {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
-    {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+        {% assign contacts_size = page.contact | size %}
+        {% for contact in page.contact: %}
+            {% assign loopindex = forloop.index %}
+            <a href='mailto:{{contact}}'>{{contact}} </a>
+            {% if loopindex < contacts_size - 1  %}
+                or
+            {% endif %}
+        {% endfor %}
     {% endif %}
     for more information.
 </p>
 
+<h2>Workshop Registration</h2>
+
+<h4 class="alert" style="padding: 10px; margin: 0px 0px 10px 0px;">
+    Register for the workshop
+    <a target="_blank" href="https://www.eventbrite.com/e/elixir-aai-workshop-tickets-19929099473">via EventBrite</a>.
+</h4>
+
 <hr/>
 
 <h2> Acknowledgement and support</h2>
-<p> This workshop is supported by <a target="_blank" href="http://elixir-uk.org/">ELIXIR-UK.</a></p>
+<p> This workshop is supported by <a target="_blank" href="http://elixir-uk.org/">ELIXIR-UK</a> and <a target="_blank" href="https://aarc-project.eu/">AARC project</a>.</p>
 
 <hr/>
 
@@ -162,7 +148,7 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
             </tr>
             <tr>
                 <td>10:00</td>
-                <td>Formative vs. summative assessment</td>
+                <td>Introduction to AAI and Shibboleth- part 1</td>
             </tr>
             
             <tr>
@@ -171,7 +157,7 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
             </tr>
             <tr>
                 <td>11:00</td>
-                <td>Teaching as performance art</td>
+                <td>Introduction to AAI and Shibboleth - part 2</td>
             </tr>
             <tr>
                 <td>12:30</td>
@@ -179,11 +165,7 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
             </tr>
              <tr>
                 <td>13:30</td>
-                <td>Discussion on the exercise on teaching as performance art</td>
-            </tr>
-            <tr>
-                <td>14:00</td>
-                <td>Concept maps</td>
+                <td>Introduction to AAI and Shibboleth - part 3</td>
             </tr>
             <tr>
                 <td>15:00</td>
@@ -191,11 +173,7 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
             </tr>
             <tr>
                 <td>15:30</td>
-                <td> Faded examples</td>
-            </tr>
-             <tr>
-                <td>16:00</td>
-                <td> Reversed Instructional Design. Learning objectives. </td></td>
+                <td>Introduction to AAI and Shibboleth - part 4</td>
             </tr>
             <tr>
                 <td>16:15</td>
@@ -211,12 +189,8 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
         <h3>Day 2</h3>
         <table class="table table-striped">
             <tr>
-                <td>09:15</td>
-                <td>Live coding and active learning<br></td>
-            </tr>
-            <tr>
-                <td>10:00</td>
-                <td>Teaching as performance art - exercise 2</td>
+                <td>09:00</td>
+                <td>Live coding<br></td>
             </tr>
             <tr>
                 <td>10:30</td>
@@ -224,94 +198,41 @@ etherpad: http://pad.software-carpentry.org/2015-11-23-Manchester-Instructor-Tra
             </tr>
              <tr>
                 <td>11:00 </td>
-                <td>Homework and workshop operations</td>
-            </tr
-              <tr>
-                <td>11:30 </td>
-                <td>Motivation and demotivation</td>
-            </tr
+                <td></td>
+            </tr>
             <tr>
                 <td>12:30</td>
                 <td>Lunch break</td>
             </tr>
             <tr>
                 <td>13:30</td>
-                <td>Alernative formative assessment</td>
+                <td></td>
             </tr>
-          
             <tr>
                 <td>15:00</td>
                 <td>Coffee break</td>
             </tr>
             <tr>
                 <td>15:15</td>
-                <td>Overview of existing materials; how to contribute</td>
+                <td></td>
             </tr>
             <tr>
-                <td>16:00</td>
-                <td>Next steps</td>
+                <td>16:15</td>
+                <td>Wrap-up and post-workshop questionnaire</td>
             </tr>
             <tr>
-                <td>16:45</td>
-                <td>Wrap-up</td>
-            </tr>
-            <tr>
-                <td>17:00</td>
+                <td>16:30</td>
                 <td>Close</td>
             </tr>
         </table>
     </div>
 </div>
 
-<h2 id="preparation" name="preparation">Preparation</h2>
-<ol>
-    <li>Please read <a target="_blank"
-                       href="http://files.software-carpentry.org/training-course/2013/08/p34-porter.pdf">Porter et al's  "Success
-        in Introductory Programming: What Works?"</a>,
-        which is a good recent summary of results specific to teaching programming, and <a target="_blank"
-                                                                                           href="http://cacm.acm.org/blogs/blog-cacm/189498-top-10-myths-about-teaching-computer-science/fulltext">Mark
-            Guzdial's "Top 10 Myths About Teaching Computer Science"</a>,
-        which is a nice overview of things that <em>are not</em> true, but are widely believed.
-    </li>
-
-    <li>Please also pick up a copy of <a target="_blank"
-                                         href="http://www.amazon.com/How-Learning-Works-Research-Based-Jossey-Bass/dp/0470484101/">"How
-        Learning Works"</a>, which is the best summary
-        going of research in education. It is full of useful insights, and a lot of how we teach is based on the
-        findings
-        it reports.
-
-    <li>Finally, please go to <a target="_blank" href=" http://software-carpentry.org/lessons.html">Software Carpentry's</a> and <a href="http://www.datacarpentry.org/lessons/">Data Carpentry's</a>
-        lessons pages and browse the lessons to see what
-        is currently taught in Software and Data Carpentry.
-
-    <li>If you are interested in doing more reading, <a target="_blank"
-                                                        href="http://www.amazon.com/Teaching-What-You-Dont-Know/dp/0674066170">Huston's
-        "Teaching What You Don't Know"</a> is a lot of fun - many will recognize themselves in these
-        stories. Past participants have also enjoyed <a target="_blank"
-                                                        href="http://www.amazon.com/Building-Better-Teacher-Teaching-Everyone/dp/0393081591">"Building
-            a Better Teacher"</a>, which is a well-written look at
-        why educational reforms in the past 50 years have mostly failed, and about what we should be doing instead.
-    </li>
-</ol>
-
-
-<h2>Selected reference and training materials</h2>
-
+<h2>Preparation</h2>
+<a name="preparation" id="preparation">&nbsp;</a>
+Please read the following documentation before the workshop:
 <ul>
-    <li><a target="_blank"
-           href="http://files.software-carpentry.org/training-course/2013/08/p34-porter.pdf">Porter et al's "Success in
-        Introductory Programming: What Works?"</a></li>
-    <li><a target="_blank"
-           href="http://cacm.acm.org/blogs/blog-cacm/189498-top-10-myths-about-teaching-computer-science/fulltext">Mark
-        Guzdial's "Top 10 Myths About Teaching Computer Science"</a></li>
-    <li><a target="_blank"
-           href="http://www.amazon.com/How-Learning-Works-Research-Based-Jossey-Bass/dp/0470484101/">Susan A. Ambrose's "How
-        Learning Works"</a></li>
-    <li><a target="_blank"
-           href="http://www.amazon.com/Teaching-What-You-Dont-Know/dp/0674066170">Huston's
-        "Teaching What You Don't Know"</a></li>
-    <li><a target="_blank"
-           href="http://www.amazon.com/Building-Better-Teacher-Teaching-Everyone/dp/0393081591">Elisabeth Green's "Building
-        a Better Teacher"</a></li>
+    <li><a target="_blank" href="https://www.switch.ch/aai/support/presentations/sp-training-2014/">SWITCH AAI Shibboleth Service Provider Training</a></li>
+    <li><a target="_blank" href="https://www.switch.ch/aai/support/presentations/shibboleth-training-2015/">SWITCH AAI Shibboleth Training 2015</a></li>
 </ul>
+
