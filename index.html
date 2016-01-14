@@ -3,7 +3,7 @@ layout: workshop
 root: .
 title: AAI Workshop for Service and Resource Providers
 venue: University of Manchester
-address: Kilburn Building, School of Computer Science, University of Manchester, Oxford Road, Manchester M13 9PL
+address: Kilburn Building, School of Computer Science, University of Manchester, Oxford Road, Manchester M13 9PL, UK
 latlng: 53.467674, -2.233924
 humandate: 15-16 March 2016
 humantime: 09:00-17:00
@@ -48,8 +48,8 @@ etherpad:
 </p>
 </p>
 
+<h4>Date and time</h4>
 <p>
-    <strong>Date and time:</strong>
     {{page.humandate}}, {{page.humantime}}
 </p>
 
@@ -73,25 +73,30 @@ etherpad:
   can use http://itouchmap.com/latlong.html to find the lat/long of an
   address.
 -->
+<h4>Location</h4>
 <p>
-    <strong>Location:</strong>
     {{page.address}}.
     {% if page.latlng %}
+</p>
+<p>
     Get directions with
     <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
     or
     <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
     {% endif %}
 </p>
+<h5 class="jumbotron" style="padding: 10px; margin: 0px 0px 10px 0px;">
+    <a href="/accommodation.html">Local travel and accomodation information.</a> Also make sure you have visa for the UK, <a target="_blank" href="https://www.gov.uk/government/organisations/uk-visas-and-immigration">if you require one</a>.
+</h5>
 
 <!--
   REQUIREMENTS
 
   Specify the requirements for the workshop, e.g. software that needs to be pre-installed, etc.
 -->
-<p>
-    <strong>Requirements:</strong> 
-</p>
+<h4>
+    Requirements
+</h4>
 <p>
     Participants should bring a laptop - if you do not have one, please let the organizers know in advance. You may 
     also be paired with someone else.
